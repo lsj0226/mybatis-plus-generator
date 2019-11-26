@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Scanner;
 
 // 演示例子，执行 main 方法控制台输入模块表名回车自动生成对应项目目录中
-public class CodeGenerator {
+public class NeusoftCodeGenerator {
 
     /**
      * <p>
@@ -57,18 +57,19 @@ public class CodeGenerator {
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
 //        dsc.setUrl("jdbc:mysql://19.128.96.178:3506/mall?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC");
-        dsc.setUrl("jdbc:mysql://19.128.96.178:3506/bmall?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC");
+        dsc.setUrl("jdbc:oracle:thin:@19.128.96.105:1521:orcl");
         // dsc.setSchemaName("public");
-        dsc.setDriverName("com.mysql.cj.jdbc.Driver");
-//        dsc.setDriverName("oracle.jdbc.driver.OracleDriver");
-        dsc.setUsername("root");
-        dsc.setPassword("root");
+//        dsc.setDriverName("com.mysql.cj.jdbc.Driver");
+        dsc.setDriverName("oracle.jdbc.driver.OracleDriver");
+        dsc.setUsername("gzsimis_unieap");
+        dsc.setPassword("gzsimis_unieap");
         mpg.setDataSource(dsc);
 
         // 包配置
         PackageConfig pc = new PackageConfig();
 //        pc.setModuleName(scanner("模块名"));
-        pc.setParent("com.lsj");
+//        pc.setParent("com.lsj.messageplatform");
+        pc.setParent("com.neusoft");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
